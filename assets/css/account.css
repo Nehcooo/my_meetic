@@ -1,0 +1,269 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page {
+    height: 100%;
+    width: 70%;
+    position: relative;
+    top: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+.profile form {
+    height: auto;
+    width: auto;
+}
+
+.profile button {
+    margin-top: 10px;
+    height: 40px;
+    width: 250px;
+    border: none;
+    outline: none;
+    background: var(--black);
+    color: white;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: opacity 0.25s ease;
+    box-shadow: 1px 2px 15px 5px rgba(0,0,0,0.05);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.profile button:hover {
+    cursor: pointer;
+    opacity: 0.70;
+}
+
+.profile button.edit-image {
+    margin-top: 20px;
+    background: none;
+    box-shadow: none;
+    color: var(--pink);
+}
+
+.profile button.disconnect {
+    margin-top: 40px;
+}
+
+.profile button.delete {
+    color: var(--white);
+    background: var(--red);
+}
+
+.img {
+    height: 300px;
+    width: 300px;
+    box-shadow: 1px 2px 15px 5px rgba(0,0,0,0.05);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.img span {
+    height: auto;
+    width: auto;
+    font-size: 200px;
+    color: var(--black);
+}
+
+.img img {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.profile p {
+    height: auto;
+    width: auto;
+    margin-top: 20px;
+    transition: opacity 0.25s ease;
+    color: var(--pink);
+    font-weight: 600;
+}
+
+.profile p:hover {
+    cursor: pointer;
+    opacity: 0.70;
+}
+
+.title {
+    height: auto;
+    width: auto;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--black);
+    padding-bottom: 0px;
+}
+
+.user {
+    height: auto;
+    width: 50%;
+    padding-top: 60px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.045);
+    box-shadow: 1px 2px 15px 5px rgba(0,0,0,0.05);
+    border-radius: 5px;
+}
+
+.input {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.input.disable {
+    pointer-events: none;
+}
+
+.input .container {
+    height: 30px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 1px 2px 15px 5px rgba(0,0,0,0.05);
+    transition: height 0.20s ease, opacity 0.20s ease;
+}
+
+.input .container.active {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 50px;
+}
+
+.input .container:hover {
+    cursor: pointer;
+    opacity: 0.60;
+}
+
+.input .container p {
+    height: auto;
+    width: auto;
+    font-size: 14px;
+}
+
+.input .container p.top {
+    margin-top: 5px;
+}
+
+.input .container p.name {
+    margin-left: 5px;
+}
+
+.input .container p.value {
+    color: grey;
+    margin-right: 5px;
+}
+
+.input .container input {
+    display: none;
+    height: 35px;
+    width: 95%;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-size: 14px;
+    border: var(--black) 1px solid;
+    background: none;
+    padding-left: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    transition: all 0.25s ease;
+}
+
+.input .container.input_error {
+    border: var(--red) 1.5px solid;
+}
+
+.input .error {
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--red);
+    font-weight: 600;
+}
+
+
+.input .container input:focus {
+    height: 40px;
+    font-size: 15px;
+    border: var(--pink) 2px solid;
+}
+
+.user button {
+    margin-top: 10px;
+    height: 45px;
+    width: 300px;
+    border: none;
+    outline: none;
+    background: var(--black);
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background 0.25s ease;
+    box-shadow: 1px 2px 15px 5px rgba(0,0,0,0.05);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.user button.submit {
+    margin-top: 30px;
+    background: var(--pink);
+}
+
+.user button.submit {
+    margin-top: 30px;
+    background: var(--pink);
+}
+
+.user button:hover {
+    cursor: pointer;
+    background: var(--black);
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.right span {
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    color: var(--pink);
+}

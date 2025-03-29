@@ -1,0 +1,385 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.options {
+    position: fixed;
+    top: 130px;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 70%;
+    box-shadow: 1px 2px 15px 5px rgba(0,0,0,0.05);
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    z-index: 99;
+    backdrop-filter: blur(10px);
+}
+
+.options .title {
+    position: absolute;
+    height: auto;
+    width: auto;
+    top: 10px;
+    left: 90px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.options .menu {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    right: 100px;
+    margin-right: 10px;
+}
+
+.options .menu button {
+    height: auto;
+    width: 100px;
+    height: 30px;
+    font-weight: 600;
+    background: var(--black);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    transition: background 0.25s ease, opacity 0.25s ease;
+}
+
+.options .menu button.active {
+    background: var(--pink);
+}
+
+.options .menu button:hover {
+    cursor: pointer;
+    opacity: 0.70;
+}
+
+.options .menu button p {
+    height: auto;
+    width: auto;
+    position: relative;
+    left: 10px;
+}
+
+.options .menu button span,
+.options .menu button span::before,
+.options .menu button span::after {
+    position: absolute;
+    right: 10px;
+    height: 1.5px;
+    width: 10px;
+    background: white;
+    transition: all 0.25s ease;
+}
+
+.options .menu button span::before {
+    content: "";
+    top: -6px;
+    right: 0px;
+}
+
+.options .menu button span::after {
+    content: "";
+    top: 6px;
+    right: 0px;
+}
+
+.options .menu button.active span {
+    transform: rotate(45deg);
+}
+  
+.options .menu button.active span::before {
+    top: 0;
+    transform: rotate(0);
+}
+  
+.options .menu button.active span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.options .menu .list {
+    margin-top: 5px;
+    height: 0px;
+    width: 100%;
+    padding: 4px 10px 4px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    user-select: none;
+    display: none;
+    overflow: hidden;
+    transition: 2s height ease;
+}
+
+.options .menu .list.active {
+    display: block;
+    height: auto;
+}
+
+.options .menu .list .option {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: var(--black);
+    width: 100%;
+    height: 30px;
+}
+
+.options .menu .list .option:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.options .menu .list .option:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.options .menu .list .option label {
+    color: white;
+    margin-left: 5px;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+}
+
+.options .menu .list .option input {
+    width: 14px;
+    height: 14px;
+    margin-left: 10px;
+    accent-color: var(--pink);
+}
+
+.page {
+    position: relative;
+    top: 40px;
+    height: 60%;
+    width: 70%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page .users {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    width: 85%;
+    height: 90%;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.page .users .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 450px;
+    min-width: 300px;
+    max-height: 450px;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 15px 5px rgba(0,0,0,0.05);
+    opacity: 0.70;
+    scale: 0.90;
+    transition: opacity 0.50s ease, scale 0.50s ease;
+}
+
+.page .users .user.active {
+    opacity: 1.0;
+    scale: 1.0;
+}
+
+.page .users .user .image {
+    height: 70%;
+    width: 90%;
+    margin-top: 10px;
+}
+
+.page .users .user .image img {
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(187, 187, 187, 0.40);
+}
+
+.page .users .user .infos {
+    width: 90%;
+    height: 30%;
+    margin-top: 10px;
+    position: relative;
+}
+
+.page .users .user .infos .actions {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: -40px;
+    gap: 20px;
+}
+
+.page .users .user .infos .actions .like {
+    height: 50px;
+    width: 50px;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    transition: opacity 0.25s ease;
+    user-select: none;
+}
+
+.page .users .user .infos .actions .like:hover {
+    cursor: pointer;
+    opacity: 0.70;
+}
+
+.page .users .user .infos .actions .like span {
+    height: auto;
+    width: auto;
+    font-size: 30px;
+    color: var(--pink);
+}
+
+.page .users .user .infos .actions .message {
+    height: 50px;
+    width: 50px;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    transition: opacity 0.25s ease;
+    user-select: none;
+}
+
+.page .users .user .infos .actions .message:hover {
+    cursor: pointer;
+    opacity: 0.70;
+}
+
+.page .users .user .infos .actions .message span {
+    height: auto;
+    width: auto;
+    font-size: 30px;
+    color: var(--white);
+}
+
+.page .users .user .infos p {
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+.page .users .user .infos p.name {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.page .users .user .infos p.city {
+    font-size: 14px;
+    color: grey;
+}
+
+.page .users .user .infos p.age {
+    font-size: 16px;
+    color: grey;
+    margin-top: 5px;
+}
+
+.page .users .user .infos p.hobbies {
+    font-size: 12px;
+    color: grey;
+}
+
+.arrow_right {
+    position: absolute;
+    right: -80px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--black);
+    border-radius: 100%;
+    transition: opacity 0.25s ease;
+    user-select: none;
+}
+
+.arrow_right span {
+    height: auto;
+    width: auto;
+    font-size: 45px;
+    color: white;
+}
+
+.arrow_left {
+    position: absolute;
+    left: -80px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--black);
+    border-radius: 100%;
+    transition: opacity 0.25s ease;
+    user-select: none;
+}
+
+.arrow_left span {
+    height: auto;
+    width: auto;
+    font-size: 45px;
+    color: white;
+}
+
+.arrow_right:hover,
+.arrow_left:hover {
+    opacity: 0.70;
+    cursor: pointer;
+}
+
+.search {
+    position: absolute;
+    right: 20px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--black);
+    border-radius: 5px;
+    transition: opacity 0.25s ease;
+    user-select: none;
+}
+
+.search span {
+    font-size: 20px;
+    height: auto;
+    width: auto;
+    color: var(--pink);
+}
+
+.search:hover {
+    cursor: pointer;
+    opacity: 0.70;
+}
